@@ -17,7 +17,7 @@
         "typescript": "^3.8.3"
     },
     "scripts": {
-        "lint:css": "stylelint './src/**/*.js'",
+        "lintstyle": "stylelint './src/**/*.tsx' && stylelint './src/**/*.ts'",
         "start": "react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test",
@@ -49,6 +49,10 @@
         "stylelint": "^13.3.3",
         "stylelint-config-standard": "^20.0.0",
         "stylelint-config-styled-components": "^0.1.1",
-        "stylelint-processor-styled-components": "^1.10.0"
+        "stylelint-processor-styled-components": "^1.10.0",
+        "typescript-plugin-styled-components": "^1.4.4"
+    },
+    "peerDependencies": {
+        "react-is": "^16.13.1"
     }
 }
