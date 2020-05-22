@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components';
-import { colorPalette } from './colorPalette';
 const GlobalStyle = createGlobalStyle`
 body {
     *{
@@ -8,10 +7,8 @@ body {
     display: flex;
     flex-direction: column;
     padding: 50px;
-    background: ${colorPalette.backGround};
     font-family:Arial, Helvetica, sans-serif;
     font-size:100%;
-    color: ${colorPalette.font};
 }
 
 h1 {
