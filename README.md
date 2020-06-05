@@ -3,10 +3,9 @@ This project contains form elements and form layout.
 It is bootstrapped using create-react-app.
 More will come...
 ## Motivation
-Having worked with forms for a while, I wanted to design my own form components. In my previous job there was a lot of discussion on best practices. And always being on a deadline and forms not being a big priority at the stage I was entering the team I never really sat down to understand them very well. So by designing my own form components and implementing what seems to be best practices at this time I am hoping to create form components that I can use for future reference.
+Having worked with forms for a while, I wanted to design my own form components. Working on forms a bit I know that there are a lot of opinions about what a good form is, and I never really sat down to make thorough research. So by designing my own form components and implementing what I find appealing and intuitive based on my research at this time I am hoping to create form components that I can use for future reference.
 
-Another reason is I want to try out other programming techniques and that I previously have not used before.
-More will come...
+At the same time I am also testing out using styled-components, to see how that is compared to regular CSS/less.
 
 ## Inspiration
 To make this form I am looking into how others are making forms and why something is done in a specific way.
