@@ -1,35 +1,34 @@
 # Forms
-This project contains form elements and form layout.
-It is bootstrapped using create-react-app.
-More will come...
+
+This project is for learning about something as simple as forms. Forms helps us communicate with the user and I will use this project to test myself and improve my knowledge.
+
 ## Motivation
+
 Having worked with forms for a while, I wanted to design my own form components. Working on forms a bit I know that there are a lot of opinions about what a good form is, and I never really sat down to make thorough research. So by designing my own form components and implementing what I find appealing and intuitive based on my research at this time I am hoping to create form components that I can use for future reference.
 
 At the same time I am also testing out using styled-components, to see how that is compared to regular CSS/less.
 
 ## Inspiration
+
 To make this form I am looking into how others are making forms and why something is done in a specific way.
 
 I am taking my inspiration from larger projects like google's material design, and Shopify's polaris-react for their beautiful designs. But also navs design system not so much for their designs as for their focus on accessibility.
 
-* https://polaris.shopify.com
-* https://material.io
-* https://design.nav.no
+-   https://polaris.shopify.com
+-   https://material.io
+-   https://design.nav.no
 
 And I particularly like material designs thorough and amazing layout in input fields.
 
-* https://material.io/components/text-fields#input-types
+-   https://material.io/components/text-fields#input-types
 
 I have also found some articles that I find useful in understanding the importance of form components, and that have helped me understand what is good form design, and why.
 
-
-* https://www.crazyegg.com/blog/form-design/
-* https://medium.com/google-design/the-evolution-of-material-designs-text-fields-603688b3fe03
-* https://cxl.com/blog/form-validation/
-* https://baymard.com/blog/adaptive-validation-error-messages
-* https://uxdesign.cc/form-best-practices-8e560e9f8bd0
-
-
+-   https://www.crazyegg.com/blog/form-design/
+-   https://medium.com/google-design/the-evolution-of-material-designs-text-fields-603688b3fe03
+-   https://cxl.com/blog/form-validation/
+-   https://baymard.com/blog/adaptive-validation-error-messages
+-   https://uxdesign.cc/form-best-practices-8e560e9f8bd0
 
 ## Available Scripts
 
@@ -44,9 +43,11 @@ The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
 ### `tsc --noEmit`
+
 To verify that the code has no type errors.
 
 ### `yarn test`
+
 Currently no tests.
 Launches the test runner in the interactive watch mode.<br />
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
