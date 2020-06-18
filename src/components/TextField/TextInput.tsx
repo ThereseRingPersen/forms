@@ -6,7 +6,7 @@ interface InputProps extends React.HTMLProps<HTMLInputElement> {
     isActive: boolean;
     hasError: boolean;
 }
-const Input = styled.input<InputProps>`
+const TextInput = styled.input<InputProps>`
     position: absolute;
     height: 3.5em;
     width: 14em;
@@ -32,4 +32,4 @@ const Input = styled.input<InputProps>`
     color: ${(props) => (props.hasError ? formColors.color.error : formColors.color.active)};
 `;
 
-export default Input;
+export default TextInput;

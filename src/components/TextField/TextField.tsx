@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Label from './Label';
-import Input from './TextInput';
+import TextInput from './TextInput';
 
 const FormGroup = styled.div`
     position: relative;
@@ -23,7 +23,7 @@ interface TextFieldProps {
 const TextField = (props: TextFieldProps) => {
     return (
         <FormGroup>
-            <Input
+            <TextInput
                 id={props.id}
                 isActive={props.isActive}
                 hasError={props.hasError}
@@ -31,7 +31,9 @@ const TextField = (props: TextFieldProps) => {
                 onBlur={props.onBlur}
                 onFocus={props.onFocus}
             />
-            <Label htmlFor={props.id} isActive={props.isActive} hasError={props.hasError}>{props.labelText}</Label>
+            <Label htmlFor={props.id} isActive={props.isActive} hasError={props.hasError}>
+                {props.labelText}
+            </Label>
         </FormGroup>
     );
 };

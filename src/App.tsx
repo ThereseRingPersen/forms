@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import GlobalStyle from './styles/globalStyle';
 import TextField from './components/TextField/TextField';
+import Button from './components/Button/Button';
 
 const App = () => {
     const [field1, setfieldState1] = React.useState<boolean>(false); // controls label text size and labelposition.
@@ -19,6 +20,7 @@ const App = () => {
                 onFocus={onFocusField1}
                 value={value1}
             />
+            <Button>submit </Button>
         </Layout>
     );
     function onChangeField1(e: React.FormEvent<HTMLInputElement>) {
