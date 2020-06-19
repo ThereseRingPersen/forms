@@ -1,13 +1,43 @@
 import { useState, useCallback, useEffect } from 'react';
-import { UseInputOptions, FormValues, FormErrors, FormProps } from './types';
+import { UseInputOptions, FormValues, FormErrors, FormProps, InputHook } from './types';
 import { isEqual } from 'lodash';
 
-export function useInput<T extends any>(initial: T, { validations = [] }: UseInputOptions) {
+export function useInput<T extends any>(initial: T, { validations = [] }: UseInputOptions): InputHook<T> {
     const [value, setValue] = useState<T>(initial);
     const [errors, setErrors] = useState<string[]>([]);
     const [touched, setTouched] = useState(false);
     const [isValidating, setIsValidating] = useState(false);
+    useEffect(() => {
+        validate();
+    }, [value]);
 
+    const isValid = errors.length === 0;
+    function validate() {
+        async () => {
+            setIsValidating(true);
+            let newErrors: string[] = [];
+            await Promise.all(
+                validations.map(async (validation) => {
+                    const result = await validation(value);
+                    if (result) {
+                        newErrors.push(result);
+                    }
+                }),
+            );
+            setErrors(newErrors);
+            setIsValidating(false);
+        };
+    }
+
+    // TODO
+    function submit() {
+        console.log('submit');
+    }
+    const clear = useCallback(() => {
+        if (typeof initial === 'string') {
+            setValue('' as any);
+        }
+    }, []);
     const onChange = useCallback((e: any) => {
         if (e.target.type === 'checkbox') {
             setValue(e.target.checked);
@@ -15,44 +45,22 @@ export function useInput<T extends any>(initial: T, { validations = [] }: UseInp
             setValue(e.target.value);
         }
     }, []);
-
-    useEffect(() => {
-        function validate() {
-            async () => {
-                setIsValidating(true);
-                let newErrors: string[] = [];
-                await Promise.all(
-                    validations.map(async (validation) => {
-                        const result = await validation(value);
-                        if (result) {
-                            newErrors.push(result);
-                        }
-                    }),
-                );
-                setErrors(newErrors);
-                setIsValidating(false);
-            };
-        }
-        validate();
-    }, [value]);
-
-    const isValid = errors.length === 0;
-
+    const reset = useCallback(() => {
+        setValue(initial);
+    }, []);
+    const onBlur = useCallback(() => setTouched(true), []);
     return {
+        submit,
         value,
         setValue,
         errors,
         setErrors,
-        clear: useCallback(() => {
-            if (typeof initial === 'string') {
-                setValue('' as any);
-            }
-        }, []),
-        reset: useCallback(() => setValue(initial), []),
-        onChange,
-        onBlur: useCallback(() => setTouched(true), []),
         touched,
         setTouched,
+        clear,
+        reset,
+        onChange,
+        onBlur,
         isValid,
         isValidating,
     };
@@ -63,18 +71,9 @@ export const useForm = (inputs: FormProps = {}) => {
     let [values, setValues] = useState<FormErrors>({});
 
     useEffect(() => {
-        let newValues: FormValues = {};
-        let newErrors: FormErrors = {};
-        // @ts-ignore
-        Object.entries(inputs).forEach(([k, v]) => {
-            newValues[k] = v.value;
-            newErrors[k] = v.errors;
-        });
-        if (!isEqual(values, newValues)) setValues(newValues);
-        if (!isEqual(errors, newErrors)) setErrors(newErrors);
+        iterateValues();
     });
 
-    // @ts-ignore
     const isValidating = Object.keys(inputs)
         .map(function (input) {
             return inputs[input];
@@ -83,7 +82,6 @@ export const useForm = (inputs: FormProps = {}) => {
             input.isValidating;
         });
     const isValid =
-        // @ts-ignore
         !isValidating &&
         Object.keys(inputs)
             .map(function (input) {
@@ -91,27 +89,45 @@ export const useForm = (inputs: FormProps = {}) => {
             })
             .every((input) => input.isValid);
 
+    function iterateValues() {
+        let newValues: FormValues = {};
+        let newErrors: FormErrors = {};
+
+        Object.entries(inputs).forEach(([k, v]) => {
+            newValues[k] = v.value;
+            newErrors[k] = v.errors;
+        });
+        if (!isEqual(values, newValues)) {
+            setValues(newValues);
+        }
+        if (!isEqual(errors, newErrors)) {
+            setErrors(newErrors);
+        }
+    }
+    function submit() {
+        console.log('submit');
+    }
+    const reset = useCallback(() => {
+        Object.keys(inputs)
+            .map(function (input) {
+                return inputs[input];
+            })
+            .forEach((input) => input.reset());
+    }, []);
+    const clear = useCallback(() => {
+        Object.keys(inputs)
+            .map(function (input) {
+                return inputs[input];
+            })
+            .forEach((input) => input.clear());
+    }, []);
     return {
-        submit: () => console.log('submit'),
         values,
         errors,
         isValid,
         isValidating,
-        reset: useCallback(() => {
-            // @ts-ignore
-            Object.keys(inputs)
-                .map(function (input) {
-                    return inputs[input];
-                })
-                .forEach((input) => input.reset());
-        }, []),
-        clear: useCallback(() => {
-            // @ts-ignore
-            Object.keys(inputs)
-                .map(function (input) {
-                    return inputs[input];
-                })
-                .forEach((input) => input.clear());
-        }, []),
+        reset,
+        clear,
+        submit,
     };
 };
