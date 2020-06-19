@@ -12,6 +12,7 @@ export function useInput<T extends any>(initial: T, { validations = [] }: UseInp
     }, [value]);
 
     const isValid = errors.length === 0;
+
     function validate() {
         async () => {
             setIsValidating(true);
