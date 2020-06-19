@@ -1,14 +1,11 @@
 import styled from 'styled-components';
 
-export const Layout = styled.div`
-    display: flex;
-    flex-direction: column;
-`;
-
 export const CenteredLayout = styled.div`
-    width: 40vw;
+    width: 25rem;
+    height: 25rem;
+    max-width: 600px;
+    max-height: 600px;
     padding: 2rem;
-    height: 500px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -16,5 +13,4 @@ export const CenteredLayout = styled.div`
     margin: 0 auto;
     border: 0.1rem solid #4b0082;
     border-radius: 0.313rem;
-    box-shadow: 3px 5px #eaccff;
 `;
