@@ -1,18 +1,18 @@
 # Forms
 
-This project is for learning about something as simple as forms. Forms helps us communicate with the user and I will use this project to test myself and improve my knowledge.
+Forms helps us communicate with the user and user often means money. A form is one of the best ways to get input from prospective customers. When someone uses your app or your website often has a goal,and often the one thing standing between the user and their goal is a form. Forms remain one of the most important types of interactions for users on the web and in apps. Forms are often considered the final step in the journey of completing their goals. Forms are just a means to an end. Users should be able to complete them quickly and without confusion. And I am myself a person that dislike anything confusing. When I want something done, I usually would have liked to have it done yesterday.
 
 ## Motivation
 
-Having worked with forms for a while, I wanted to design my own form components. Working on forms a bit I know that there are a lot of opinions about what a good form is, and I never really sat down to make thorough research. So by designing my own form components and implementing what I find appealing and intuitive based on my research at this time I am hoping to create form components that I can use for future reference.
+This project is for going deeper into forms, I have worked with forms for a while, but as a new developer I have never taken the plunge into figuring out what a good form is. I have mostly relied on designers and senior developers to figure this out for me. But I believe it is important to have an understanding and opinion of this simple yet complex communication form with the user.
 
-At the same time I am also testing out using styled-components, to see how that is compared to regular CSS/less.
+I am also testing out some things I have never used before. For a long time I have been dying to try out styled-components. Just to see how that is compared to using less. I am also using hooks to control the form, just for the sake of it. Previously I have worked with react-form and Formik, and I like it. But new is always better...
 
 ## Inspiration
 
 To make this form I am looking into how others are making forms and why something is done in a specific way.
 
-I am taking my inspiration from larger projects like google's material design, and Shopify's polaris-react for their beautiful designs. But also navs design system not so much for their designs as for their focus on accessibility.
+I am taking my inspiration from larger projects like google's material design, and Shopify's polaris-react for their beautiful designs. But also NAV's design system, but not so much for their cute designs as for their focus on accessibility.
 
 -   https://polaris.shopify.com
 -   https://material.io
