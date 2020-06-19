@@ -8,6 +8,7 @@ interface LabelProps {
 }
 const Label = styled.label<LabelProps>`
     position: absolute;
+    height: 1.3rem;
     line-height: 1.25em;
     padding-left: 1em;
     width: 14em;
