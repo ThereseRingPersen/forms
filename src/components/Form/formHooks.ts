@@ -1,5 +1,6 @@
 import { useState, useCallback, useEffect } from 'react';
 import { UseInputOptions, FormValues, FormErrors, FormProps } from './types';
+import { isEqual } from 'lodash';
 
 export function useInput<T extends any>(initial: T, { validations = [] }: UseInputOptions) {
     const [value, setValue] = useState<T>(initial);
