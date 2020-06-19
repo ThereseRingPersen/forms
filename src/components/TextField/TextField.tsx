@@ -17,7 +17,6 @@ interface TextFieldProps
     onChange: (e: React.FormEvent<HTMLInputElement>) => void;
     onBlur?: (e: React.FormEvent<HTMLInputElement>) => void;
     onFocus?: (e: React.FormEvent<HTMLInputElement>) => void;
-    ref: any;
 }
 
 const TextField = (props: TextFieldProps) => {
@@ -32,7 +31,6 @@ const TextField = (props: TextFieldProps) => {
                     onBlur={props.onBlur}
                     onFocus={props.onFocus}
                     type={props.type}
-                    ref={props.ref}
                 />
                 <Label htmlFor={props.id} isActive={props.active} hasError={props.hasError}>
                     {props.labelText}
