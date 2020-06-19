@@ -2,12 +2,12 @@ import styled from 'styled-components';
 import { formColors } from './formColors';
 import { InputProps, LabelProps } from './types';
 
-export const TextInput = styled.input<InputProps>`
+export const Input = styled.input<InputProps>`
     position: absolute;
-    height: 3.5em;
-    width: 14em;
-    line-height: 1.25em;
-    font-size: 1em;
+    height: 3.5rem;
+    width: 14rem;
+    line-height: 1.25rem;
+    font-size: 1rem;
     padding: 1.5rem 0.875rem 0.875rem 0.875rem;
     border: none;
     outline: none;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { InputGroup, FormGroup, Label, TextInput, ErrorText, HelperText } from './styles';
+import { InputGroup, FormGroup, Label, Input, ErrorText, HelperText } from './styles';
 type Type = 'text' | 'email' | 'password';
 interface TextFieldProps {
     id: string;
@@ -19,7 +19,7 @@ const TextField = (props: TextFieldProps) => {
     return (
         <FormGroup>
             <InputGroup>
-                <TextInput
+                <Input
                     id={props.id}
                     isActive={props.active}
                     hasError={props.hasError}
