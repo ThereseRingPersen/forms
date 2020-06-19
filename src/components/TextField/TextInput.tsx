@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { formColors } from './formColors';
 
-interface InputProps extends React.HTMLProps<HTMLInputElement> {
+interface InputProps extends React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
     isActive: boolean;
     hasError: boolean;
 }
@@ -12,10 +12,10 @@ const TextInput = styled.input<InputProps>`
     width: 14em;
     line-height: 1.25em;
     font-size: 1em;
-    padding: 24px 14px 14px 14px;
+    padding: 1.5rem 0.875rem 0.875rem 0.875rem;
     border: none;
     outline: none;
-    border-radius: 5px 5px 0 0;
+    border-radius: 0.313rem 0.313rem 0 0;
     border-bottom: ${(props) => (props.hasError ? `0.125em solid ${formColors.color.error}` : `0`)};
     background-color: ${(props) =>
         props.isActive ? formColors.backgroundColor.dark : formColors.backgroundColor.light};
