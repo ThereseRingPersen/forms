@@ -1,8 +1,5 @@
 import React from 'react';
-import Label from './Label';
-import TextInput from './TextInput';
-import { formColors } from './formColors';
-import { InputGroup, FormGroup, HelperText } from './styles';
+import { InputGroup, FormGroup, Label, TextInput, ErrorText, HelperText } from './styles';
 type Type = 'text' | 'email' | 'password';
 interface TextFieldProps
     extends React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
