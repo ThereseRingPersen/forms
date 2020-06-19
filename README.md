@@ -1,6 +1,6 @@
 # Forms
 
-Forms helps us communicate with the user and user often means money. A form is one of the best ways to get input from prospective customers. When someone uses your app or your website often has a goal,and often the one thing standing between the user and their goal is a form. Forms remain one of the most important types of interactions for users on the web and in apps. Forms are often considered the final step in the journey of completing their goals. Forms are just a means to an end. Users should be able to complete them quickly and without confusion. And I am myself a person that dislike anything confusing. When I want something done, I usually would have liked to have it done yesterday.
+Forms helps us communicate with the user and happy users often means money. A form is one of the best ways to get input from prospective customers. When someone uses your app or your website often has a goal,and often the one thing standing between the user and their goal is a form. Forms remain one of the most important types of interactions for users on the web and in apps. Forms are often considered the final step in the journey of completing their goals. Forms are just a means to an end. Users should be able to complete them quickly and without confusion. And I am myself a person that dislike anything confusing. When I want something done, I usually would have liked to have it done yesterday.
 
 ## Motivation
 
