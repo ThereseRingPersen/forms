@@ -1,6 +1,6 @@
 import React from 'react';
 import {CenteredLayout} from '../../../styles/layout';
-import TextField from '../../TextField/TextField';
+import TextField from '../../TextField';
 import Button from '../../Button/Button';
 
 type LoginUser = {
