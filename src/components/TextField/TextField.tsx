@@ -1,8 +1,7 @@
 import React from 'react';
 import { InputGroup, FormGroup, Label, TextInput, ErrorText, HelperText } from './styles';
 type Type = 'text' | 'email' | 'password';
-interface TextFieldProps
-    extends React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
+interface TextFieldProps {
     id: string;
     type: Type;
     value?: string;
