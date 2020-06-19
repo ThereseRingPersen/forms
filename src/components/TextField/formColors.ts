@@ -9,6 +9,7 @@ const formColors = {
         hover: '#101010',
         focus: '#5A0740',
         error: '#CC0000',
+        helperText: '#888888',
     },
 };
 
