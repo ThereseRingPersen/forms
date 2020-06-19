@@ -2,6 +2,7 @@ import { useState, useCallback, useEffect } from 'react';
 import { UseInputOptions, FormValues, FormErrors, FormProps, InputHook } from './types';
 import { isEqual } from 'lodash';
 
+// TODO get rid of any
 export function useInput<T extends any>(initial: T, { validations = [] }: UseInputOptions): InputHook<T> {
     const [value, setValue] = useState<T>(initial);
     const [errors, setErrors] = useState<string[]>([]);
@@ -36,7 +37,7 @@ export function useInput<T extends any>(initial: T, { validations = [] }: UseInp
     }
     const clear = useCallback(() => {
         if (typeof initial === 'string') {
-            setValue('' as any);
+            setValue('' as any); // TODO Get rid of any
         }
     }, []);
     const onChange = useCallback((e: any) => {
