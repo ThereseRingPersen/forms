@@ -7,11 +7,11 @@ Forms helps us communicate with the user and happy users often means money. A fo
 This project is for getting deeper into forms. 
 I have worked with forms for a while, but as a new developer I have never taken the plunge into figuring out what makes a good form. I have mostly relied on designers and senior developers to figure this out for me. By that I mean I have never been a desicion maker in this context. But I believe it is important to have an understanding and opinion of this simple yet complex communication form with the user.
 
-I am also testing out some things I have never used before. For a long time I have been dying to try out styled-components. Just to see how that is compared to using less. I am also using hooks to control the form, just for the sake of it. Previously I have worked with react-form and Formik, and I like it. But new is always better... Well not necessarily, but it is fun.
+I am also testing out some things I have never used before. For a long time I have been dying to try out styled-components. Just to see how that is compared to using less. I am also using hooks to control the form, just to try something new. Previously I have worked with react-form and Formik, and I like Formik.
 
 ## Inspiration
 
-To make this form I am looking into how others are making forms and why something is done in a specific way.
+To make this form I am looking into how others are making forms and try to understand why they do something in a specific way.
 
 I am taking my inspiration from larger projects like google's material design, and Shopify's polaris-react for their beautiful designs. But also NAV's design system, but not so much for their cute designs as for their focus on accessibility.
 
@@ -23,7 +23,7 @@ And I particularly like material designs thorough and amazing layout in input fi
 
 -   https://material.io/components/text-fields#input-types
 
-I have also found some articles that I find useful in understanding the importance of form components, and that have helped me understand what is good form design, and why.
+I have also found some articles, which I find useful in understanding how other, and that have helped me understand what is good form design, and why.
 
 -   https://www.crazyegg.com/blog/form-design/
 -   https://medium.com/google-design/the-evolution-of-material-designs-text-fields-603688b3fe03
