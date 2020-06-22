@@ -86,7 +86,7 @@ export const useForm = (inputs: FormProps = {}) => {
     const isValid =
         !isValidating &&
         Object.keys(inputs)
-            .map(function (input) {
+            .map( (input) =>{
                 return inputs[input];
             })
             .every((input) => input.isValid);
@@ -107,18 +107,18 @@ export const useForm = (inputs: FormProps = {}) => {
         }
     }
     function submit() {
-        console.log('submit');
+        console.log('submit');// TODO
     }
     const reset = useCallback(() => {
         Object.keys(inputs)
-            .map(function (input) {
+            .map( (input)=> {
                 return inputs[input];
             })
             .forEach((input) => input.reset());
     }, []);
     const clear = useCallback(() => {
         Object.keys(inputs)
-            .map(function (input) {
+            .map( (input) => {
                 return inputs[input];
             })
             .forEach((input) => input.clear());
