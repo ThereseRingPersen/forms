@@ -1,38 +1,27 @@
 import React from 'react';
 import { InputGroup, FormGroup, Label, Input, ErrorText, HelperText } from './styles';
-type Type = 'text' | 'email' | 'password';
-interface TextFieldProps {
-    id: string;
-    type: Type;
-    value?: string;
-    labelText: string;
-    active: boolean;
-    hasError: boolean;
-    errorMessage?: string;
-    helperText?: string;
-    onChange: (e: React.FormEvent<HTMLInputElement>) => void;
-    onBlur?: (e: React.FormEvent<HTMLInputElement>) => void;
-    onFocus?: (e: React.FormEvent<HTMLInputElement>) => void;
-}
+import { TextFieldProps } from './types';
 
-const TextField = (props: TextFieldProps) => {
+const TextField = ({ id, type, inputHook, label, helperText }: TextFieldProps) => {
     return (
         <FormGroup>
             <InputGroup>
                 <Input
-                    id={props.id}
-                    isActive={props.active}
-                    hasError={props.hasError}
-                    onChange={props.onChange}
-                    onBlur={props.onBlur}
-                    onFocus={props.onFocus}
-                    type={props.type}
+                    id={id}
+                    type={type}
+                    isActive={inputHook.isActive}
+                    hasError={inputHook.errors.length > 0}
+                    onChange={inputHook.onChange}
+                    onBlur={inputHook.onBlur}
+                    onFocus={inputHook.onFocus}
+                    value={inputHook.value}
                 />
-                <Label htmlFor={props.id} isActive={props.active} hasError={props.hasError}>
-                    {props.labelText}
+                <Label htmlFor={id} isActive={inputHook.isActive} hasError={inputHook.errors.length > 0}>
+                    {label}
                 </Label>
             </InputGroup>
-            <HelperText>Here is some helpertext</HelperText>
+            {helperText && inputHook.errors.length === 0 && <HelperText>{helperText} </HelperText>}
+            {inputHook.errors.length > 0 && <ErrorText>{inputHook.errors[0]}</ErrorText>}
         </FormGroup>
     );
 };

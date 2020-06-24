@@ -1,3 +1,5 @@
+export type InputTypes = string | boolean;
+
 export type FormValues = {
     [key: string]: any;
 };
@@ -7,7 +9,7 @@ export type FormErrors = {
 };
 
 export interface FormProps {
-    [key: string]: InputHook<any>; // TODO fix any.
+    [key: string]: InputHook<any>;
 }
 
 export type Validation = (value: any) => Promise<ValidationResult> | ValidationResult;
@@ -33,6 +35,8 @@ export interface InputHook<T> {
     isValidating: boolean;
     onChange: (e: any) => void;
     onBlur: () => void;
+    onFocus: () => void;
     clear: () => void;
     reset: () => void;
+    isActive: boolean;
 }
