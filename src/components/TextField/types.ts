@@ -4,15 +4,20 @@ export type Type = 'text' | 'email' | 'password';
 
 export interface TextFieldProps {
     id: string;
-    type: Type;
     label: string;
+    errorMessage: string | null;
     helperText?: string;
-    inputHook: InputHook<string>;
+    isActive: boolean;
+    type: Type;
+    onChange: (e: any) => void;
+    onBlur: (e: any) => void;
+    onFocus: (e: any) => void;
+    value: string;
 }
 
 export interface LabelProps {
     isActive: boolean;
-    children: string;
+    children: string | React.ReactNode;
     hasError: boolean;
 }
 

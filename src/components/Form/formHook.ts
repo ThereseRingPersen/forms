@@ -1,5 +1,5 @@
 import { useState, useCallback, useEffect } from 'react';
-import { FormValues, FormErrors, FormProps, InputHook } from './types';
+import { FormValues, FormErrors, FormProps } from './types';
 import { isEqual } from 'lodash';
 
 export const useForm = (inputs: FormProps = {}) => {
@@ -49,14 +49,14 @@ export const useForm = (inputs: FormProps = {}) => {
                 return inputs[input];
             })
             .forEach((input) => input.reset());
-    }, []);
+    }, [inputs]);
     const clear = useCallback(() => {
         Object.keys(inputs)
             .map((input) => {
                 return inputs[input];
             })
             .forEach((input) => input.clear());
-    }, []);
+    }, [inputs]);
     return {
         values,
         errors,

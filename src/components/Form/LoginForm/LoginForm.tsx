@@ -11,7 +11,7 @@ type LoginUser = {
 };
 
 const LoginForm = () => {
-    const emailHook = useInput<string>('some', {
+    const emailHook = useInput<string>('', {
         validations: [emailFormatValidation],
     });
     const passwordHook = useInput<string>('', {
@@ -21,8 +21,28 @@ const LoginForm = () => {
 
     return (
         <CenteredLayout>
-            <TextField id={'email'} type={'email'} label={'Email'} inputHook={emailHook} />
-            <TextField id={'password'} type={'password'} label={'Password'} inputHook={passwordHook} />
+            <TextField
+                type={'email'}
+                id={'email'}
+                label={'Email'}
+                errorMessage={emailHook.errors[0] ? emailHook.errors[0] : null}
+                isActive={emailHook.isActive}
+                onChange={emailHook.onChange}
+                onBlur={emailHook.onBlur}
+                onFocus={emailHook.onFocus}
+                value={emailHook.value}
+            />
+            <TextField
+                type={'password'}
+                id={'password'}
+                label={'Password'}
+                errorMessage={passwordHook.errors[0] ? passwordHook.errors[0] : null}
+                isActive={passwordHook.isActive}
+                onChange={passwordHook.onChange}
+                onBlur={passwordHook.onBlur}
+                onFocus={passwordHook.onFocus}
+                value={passwordHook.value}
+            />
             <Button type="submit" disabled={!form.isValid} onClick={form.submit}>
                 Login
             </Button>

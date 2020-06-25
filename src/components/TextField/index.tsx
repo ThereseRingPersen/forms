@@ -1,27 +1,38 @@
 import React from 'react';
-import { InputGroup, FormGroup, Label, Input, ErrorText, HelperText } from './styles';
+import { InputGroup, FormGroup, Input, Label, ErrorText, HelperText } from './styles';
 import { TextFieldProps } from './types';
 
-const TextField = ({ id, type, inputHook, label, helperText }: TextFieldProps) => {
+const TextField = ({
+    id,
+    label,
+    helperText,
+    errorMessage,
+    isActive,
+    type,
+    onChange,
+    onBlur,
+    onFocus,
+    value,
+}: TextFieldProps) => {
     return (
         <FormGroup>
             <InputGroup>
                 <Input
                     id={id}
                     type={type}
-                    isActive={inputHook.isActive}
-                    hasError={inputHook.errors.length > 0}
-                    onChange={inputHook.onChange}
-                    onBlur={inputHook.onBlur}
-                    onFocus={inputHook.onFocus}
-                    value={inputHook.value}
+                    isActive={isActive}
+                    hasError={errorMessage !== null}
+                    onChange={onChange}
+                    onBlur={onBlur}
+                    onFocus={onFocus}
+                    value={value}
                 />
-                <Label htmlFor={id} isActive={inputHook.isActive} hasError={inputHook.errors.length > 0}>
+                <Label htmlFor={id} isActive={isActive} hasError={errorMessage !== null}>
                     {label}
                 </Label>
             </InputGroup>
-            {helperText && inputHook.errors.length === 0 && <HelperText>{helperText} </HelperText>}
-            {inputHook.errors.length > 0 && <ErrorText>{inputHook.errors[0]}</ErrorText>}
+            {helperText && errorMessage !== null && <HelperText>{helperText} </HelperText>}
+            {errorMessage !== null && <ErrorText>{errorMessage}</ErrorText>}
         </FormGroup>
     );
 };
