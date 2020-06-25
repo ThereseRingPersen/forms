@@ -9,15 +9,18 @@ export const Input = styled.input<InputProps>`
     line-height: 1.25rem;
     font-size: 1rem;
     padding: 1.5rem 0.875rem 0.875rem 0.875rem;
+    background-color: ${formColors.backgroundColor.default};
     border: none;
     outline: none;
     border-radius: 0.313rem 0.313rem 0 0;
-    border-bottom: ${(props) => (props.hasError ? `0.125em solid ${formColors.color.error}` : `0`)};
+    box-shadow: ${(props) => (props.hasError ? `inset 0.125em solid ${formColors.color.error}` : `0`)};
     background-color: ${(props) =>
         props.isActive ? formColors.backgroundColor.dark : formColors.backgroundColor.light};
     :hover {
-        border-bottom: ${(props) =>
-            props.hasError ? `0.125em solid ${formColors.color.error}` : `0.0625em solid ${formColors.color.hover}`};
+        box-shadow: ${(props) =>
+            props.hasError
+                ? `inset 0.125em solid ${formColors.color.error}`
+                : `inset 0.0625em solid ${formColors.color.hover}`};
     }
     :focus {
         border-bottom: 0.125em solid ${(props) => (props.hasError ? formColors.color.error : formColors.color.focus)};

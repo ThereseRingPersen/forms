@@ -2,6 +2,7 @@ const formColors = {
     backgroundColor: {
         dark: '#E0E0E0',
         light: '#E8E8E8',
+        default: '#F0F0F0',
     },
     color: {
         inactive: '#808080',
