@@ -21,6 +21,7 @@ const LoginForm = () => {
 
     return (
         <CenteredLayout>
+            <h2>Login</h2>
             <TextField
                 type={'email'}
                 id={'email'}
@@ -44,6 +45,7 @@ const LoginForm = () => {
                 onFocus={passwordHook.onFocus}
                 isFocused={passwordHook.isFocused}
                 value={passwordHook.value}
+                helperText={'Must have at least 8 characters'}
             />
             <Button type="submit" disabled={!form.isValid} onClick={form.submit}>
                 Login

@@ -1,5 +1,5 @@
 import React from 'react';
-import { InputGroup, FormGroup, Input, Label, ErrorText, HelperText } from './styles';
+import { InputAndLabelContainer, FormGroup, Input, InputGroup, Label, ErrorText, HelperText } from './styles';
 import { TextFieldProps } from './types';
 
 const TextField = ({
@@ -17,22 +17,26 @@ const TextField = ({
 }: TextFieldProps) => {
     return (
         <FormGroup>
-            <InputGroup>
-                <Input
-                    id={id}
-                    type={type}
-                    isActive={isActive}
-                    hasError={errorMessage !== null}
-                    onChange={onChange}
-                    onBlur={onBlur}
-                    onFocus={onFocus}
-                    value={value}
-                />
-                <Label htmlFor={id} isActive={isActive} isFocused={isFocused} hasError={errorMessage !== null}>
-                    {label}
-                </Label>
+            <InputGroup isActive={isActive} hasError={errorMessage !== null}>
+                <InputAndLabelContainer isActive={isActive} hasError={errorMessage !== null}>
+                    <Input
+                        id={id}
+                        type={type}
+                        isActive={isActive}
+                        hasError={errorMessage !== null}
+                        onChange={onChange}
+                        onBlur={onBlur}
+                        onFocus={onFocus}
+                        value={value}
+                        autoComplete={'off'}
+                    />
+                    <Label htmlFor={id} isActive={isActive} isFocused={isFocused} hasError={errorMessage !== null}>
+                        {label}
+                    </Label>
+                </InputAndLabelContainer>
             </InputGroup>
-            {helperText && errorMessage !== null && <HelperText>{helperText} </HelperText>}
+
+            {helperText && errorMessage === null && <HelperText>{helperText} </HelperText>}
             {errorMessage !== null && <ErrorText>{errorMessage}</ErrorText>}
         </FormGroup>
     );

@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback } from 'react';
 import { UseInputOptions, InputHook } from './types';
 
 // TODO get rid of any
