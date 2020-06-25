@@ -30,6 +30,7 @@ const LoginForm = () => {
                 onChange={emailHook.onChange}
                 onBlur={emailHook.onBlur}
                 onFocus={emailHook.onFocus}
+                isFocused={emailHook.isFocused}
                 value={emailHook.value}
             />
             <TextField
@@ -41,6 +42,7 @@ const LoginForm = () => {
                 onChange={passwordHook.onChange}
                 onBlur={passwordHook.onBlur}
                 onFocus={passwordHook.onFocus}
+                isFocused={passwordHook.isFocused}
                 value={passwordHook.value}
             />
             <Button type="submit" disabled={!form.isValid} onClick={form.submit}>

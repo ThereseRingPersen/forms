@@ -25,7 +25,7 @@ export const Input = styled.input<InputProps>`
     :focus {
         box-shadow: inset 0 -0.125rem 0 0 ${(props) => (props.hasError ? formColors.color.error : formColors.color.focus)};
     }
-    :focus + label {
+    :focus {
         color: ${(props) => (props.hasError ? formColors.color.error : formColors.color.focus)};
     }
     color: ${(props) => (props.hasError ? formColors.color.error : formColors.color.active)};
@@ -44,7 +44,7 @@ export const Label = styled.label<LabelProps>`
     width: 14em;
     top: ${(props) => (props.isActive ? '5px' : '24px')};
     font-size: ${(props) => (props.isActive ? '0.8em' : '1em')};
-    color: ${(props) => labelColor(props.hasError, props.isActive)};
+    color: ${(props) => labelColor(props.hasError, props.isActive, props.isFocused)};
 `;
 export const HelperText = styled.div`
     height: 1.3rem;
@@ -62,13 +62,14 @@ export const FormGroup = styled.div`
     height: 4.5rem;
 `;
 
-function labelColor(hasError: boolean, isActive: boolean) {
+function labelColor(hasError: boolean, isActive: boolean, isFocused: boolean) {
     if (hasError) {
         return formColors.color.error;
+    } else if (isFocused) {
+        return formColors.color.focus;
     } else if (isActive) {
         return formColors.color.active;
     } else {
         return formColors.color.inactive;
     }
 }
-function inputBackgroundColor(isActive: boolean) {}

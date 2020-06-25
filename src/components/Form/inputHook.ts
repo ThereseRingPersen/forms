@@ -8,6 +8,7 @@ export function useInput<T>(initial: T, { validations = [] }: UseInputOptions): 
     const [touched, setTouched] = useState<boolean>(false);
     const [isActive, setIsActive] = useState<boolean>(false);
     const [isValidating, setIsValidating] = useState(false);
+    const [isFocused, setIsFocused] = useState(false);
 
     const isValid = errors.length === 0;
 
@@ -31,6 +32,7 @@ export function useInput<T>(initial: T, { validations = [] }: UseInputOptions): 
 
     const onBlur = useCallback(() => {
         setTouched(true);
+        setIsFocused(false);
         async function validate(): Promise<void> {
             setIsValidating(true);
             let newErrors: string[] = [];
@@ -43,17 +45,18 @@ export function useInput<T>(initial: T, { validations = [] }: UseInputOptions): 
                 }),
             );
             setErrors(newErrors);
-           if (typeof value === 'string') {
-               setIsActive(value.length > 0);
-           }else if(typeof value === 'boolean'){
-               setIsActive(value);
-           }
+            if (typeof value === 'string') {
+                setIsActive(value.length > 0);
+            } else if (typeof value === 'boolean') {
+                setIsActive(value);
+            }
             setIsValidating(false);
         }
         validate();
     }, [validations, value]);
     const onFocus = useCallback(() => {
         setErrors([]);
+        setIsFocused(true);
         setIsActive(true);
     }, []);
     return {
@@ -72,5 +75,6 @@ export function useInput<T>(initial: T, { validations = [] }: UseInputOptions): 
         isValid,
         isValidating,
         isActive,
+        isFocused,
     };
 }

@@ -39,4 +39,5 @@ export interface InputHook<T> {
     clear: () => void;
     reset: () => void;
     isActive: boolean;
+    isFocused: boolean
 }

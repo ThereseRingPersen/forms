@@ -13,6 +13,7 @@ const TextField = ({
     onBlur,
     onFocus,
     value,
+    isFocused,
 }: TextFieldProps) => {
     return (
         <FormGroup>
@@ -27,7 +28,7 @@ const TextField = ({
                     onFocus={onFocus}
                     value={value}
                 />
-                <Label htmlFor={id} isActive={isActive} hasError={errorMessage !== null}>
+                <Label htmlFor={id} isActive={isActive} isFocused={isFocused} hasError={errorMessage !== null}>
                     {label}
                 </Label>
             </InputGroup>

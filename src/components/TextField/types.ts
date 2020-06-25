@@ -13,12 +13,14 @@ export interface TextFieldProps {
     onBlur: (e: any) => void;
     onFocus: (e: any) => void;
     value: string;
+    isFocused: boolean;
 }
 
 export interface LabelProps {
     isActive: boolean;
     children: string | React.ReactNode;
     hasError: boolean;
+    isFocused: boolean;
 }
 
 export interface InputProps {
