@@ -9,17 +9,6 @@ export function useInput<T>(initial: T, { validations = [] }: UseInputOptions): 
     const [isActive, setIsActive] = useState<boolean>(false);
     const [isValidating, setIsValidating] = useState(false);
 
-    useEffect(() => {
-        const isActivated = () => {
-            if (typeof value === 'string') {
-                setIsActive(value.length > 0);
-            } else if (typeof value === 'boolean') {
-                setIsActive(value);
-            }
-        };
-        isActivated();
-    }, [touched, value]);
-
     const isValid = errors.length === 0;
 
     // TODO
@@ -54,6 +43,11 @@ export function useInput<T>(initial: T, { validations = [] }: UseInputOptions): 
                 }),
             );
             setErrors(newErrors);
+           if (typeof value === 'string') {
+               setIsActive(value.length > 0);
+           }else if(typeof value === 'boolean'){
+               setIsActive(value);
+           }
             setIsValidating(false);
         }
         validate();

@@ -13,17 +13,17 @@ export const Input = styled.input<InputProps>`
     border: none;
     outline: none;
     border-radius: 0.313rem 0.313rem 0 0;
-    box-shadow: ${(props) => (props.hasError ? `inset 0.125em solid ${formColors.color.error}` : `0`)};
+    box-shadow: ${(props) => (props.hasError ? `inset 0 -0.125rem 0 0 ${formColors.color.error}` : `0`)};
     background-color: ${(props) =>
         props.isActive ? formColors.backgroundColor.dark : formColors.backgroundColor.light};
     :hover {
         box-shadow: ${(props) =>
             props.hasError
-                ? `inset 0.125em solid ${formColors.color.error}`
-                : `inset 0.0625em solid ${formColors.color.hover}`};
+                ? `inset 0 -0.125rem 0 0 ${formColors.color.error}`
+                : `inset 0 -0.0625rem 0 0 ${formColors.color.hover}`};
     }
     :focus {
-        border-bottom: 0.125em solid ${(props) => (props.hasError ? formColors.color.error : formColors.color.focus)};
+        box-shadow: inset 0 -0.125rem 0 0 ${(props) => (props.hasError ? formColors.color.error : formColors.color.focus)};
     }
     :focus + label {
         color: ${(props) => (props.hasError ? formColors.color.error : formColors.color.focus)};
@@ -71,3 +71,4 @@ function labelColor(hasError: boolean, isActive: boolean) {
         return formColors.color.inactive;
     }
 }
+function inputBackgroundColor(isActive: boolean) {}
