@@ -11,7 +11,7 @@ const Button = styled.button`
     font-size: 1.2rem;
     background: ${buttonColors.backgroundColor.primary};
     color: ${buttonColors.text.primary};
-    width: 14rem;
+    width: 18rem;
     height: 3rem;
     border: 0.125rem solid ${buttonColors.backgroundColor.primary};
     border-radius: 0.313rem;
