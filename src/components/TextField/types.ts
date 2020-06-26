@@ -1,6 +1,7 @@
 import { InputHook, InputTypes } from '../Form/types';
 
 export type Type = 'text' | 'email' | 'password';
+export type LeadingIcon = 'password' | 'email';
 
 export interface TextFieldProps {
     id: string;
@@ -9,6 +10,8 @@ export interface TextFieldProps {
     helperText?: string;
     isActive: boolean;
     type: Type;
+    leadingIcon?: LeadingIcon;
+    trailingIcon?: string;
     onChange: (e: any) => void;
     onBlur: (e: any) => void;
     onFocus: (e: any) => void;
@@ -26,4 +29,11 @@ export interface LabelProps {
 export interface InputProps {
     isActive: boolean;
     hasError: boolean;
+}
+
+export interface InputGroupProps {
+    isActive: boolean;
+    hasError: boolean;
+    leadingIcon?: (icon: any) => any;
+    trailingIcon?: (icon: any) => any;
 }

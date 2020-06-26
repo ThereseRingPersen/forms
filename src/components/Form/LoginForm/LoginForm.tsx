@@ -33,6 +33,7 @@ const LoginForm = () => {
                 onFocus={emailHook.onFocus}
                 isFocused={emailHook.isFocused}
                 value={emailHook.value}
+                leadingIcon={'email'}
             />
             <TextField
                 type={'password'}
@@ -45,7 +46,8 @@ const LoginForm = () => {
                 onFocus={passwordHook.onFocus}
                 isFocused={passwordHook.isFocused}
                 value={passwordHook.value}
-                helperText={'Must have at least 8 characters'}
+                helperText={'Must be at least 8 characters'}
+                leadingIcon={'password'}
             />
             <Button type="submit" disabled={!form.isValid} onClick={form.submit}>
                 Login
