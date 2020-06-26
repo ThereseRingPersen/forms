@@ -1,10 +1,17 @@
 # Forms
 
-Forms helps us communicate with the user and happy users often means money. A form is one of the best ways to get input from prospective customers. When someone uses your app or your website often has a goal,and often the one thing standing between the user and their goal is a form. Forms remain one of the most important types of interactions for users on the web and in apps. Forms are often considered the final step in the journey of completing their goals. Forms are just a means to an end. Users should be able to complete them quickly and without confusion. And I am myself a person that dislike anything confusing. When I want something done, I usually would have liked to have it done yesterday.
+Forms helps us communicate with the user and happy users often means money. A form is one of the best ways to get input from prospective customers.
+
+When someone uses your app or your website often has a goal,and often the one thing standing between the user and their goal is a form. Forms remain one of the most important types of interactions for users on the web and in apps. Forms are often considered the final step in the journey of completing their goals.
+
+Forms are just a means to an end. Users should be able to complete them quickly and without confusion. And I am myself a person that dislike anything confusing. When I want something done, I usually would have liked to have it done yesterday.
+
+### See my progress at:
+https://thereseringpersen.github.io/forms/
 
 ## Motivation
 
-This project is for getting deeper into forms. 
+This project is for getting deeper into forms.
 I have worked with forms for a while, but as a new developer I have never taken the plunge into figuring out what makes a good form. I have mostly relied on designers and senior developers to figure this out for me. By that I mean I have never been a desicion maker in this context. But I believe it is important to have an understanding and opinion of this simple yet complex communication form with the user.
 
 I am also testing out some things I have never used before. For a long time I have been dying to try out styled-components. Just to see how that is compared to using less. I am also using hooks to control the form, just to try something new. Previously I have worked with react-form and Formik, and I like Formik.
