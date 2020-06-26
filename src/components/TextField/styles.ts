@@ -19,6 +19,7 @@ export const Input = styled.input<InputProps>`
     color: ${(props) => (props.hasError ? formColors.color.error : formColors.color.active)};
 `;
 export const InputGroup = styled.div<InputProps>`
+    display: inline-flex;
     height: 3.6rem;
     width: 100%;
     background-color: ${formColors.backgroundColor.default};
@@ -32,12 +33,19 @@ export const InputGroup = styled.div<InputProps>`
                 ? `inset 0 -0.125rem 0 0 ${formColors.color.error}`
                 : `inset 0 -0.0625rem 0 0 ${formColors.color.hover}`};
     }
+    :focus-within,
     :focus {
         box-shadow: inset 0 -0.125rem 0 0 ${(props) => (props.hasError ? formColors.color.error : formColors.color.focus)};
+    }
+    svg {
+        margin-top: 0.313rem;
+        margin-left: 0.2rem;
+        align-self: center;
     }
 `;
 export const InputAndLabelContainer = styled.div<InputProps>`
     position: relative;
+    width: 100%;
 `;
 export const Label = styled.label<LabelProps>`
     position: absolute;
@@ -61,8 +69,8 @@ export const ErrorText = styled.div`
     font-size: 0.8rem;
 `;
 export const FormGroup = styled.div`
-    margin-bottom: 0.5rem;
-    width: 14rem;
+    margin-bottom: 0.7rem;
+    width: 18rem;
     height: 4.5rem;
 `;
 
