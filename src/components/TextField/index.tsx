@@ -61,10 +61,8 @@ const TextField = ({
         switch (icon) {
             case 'email':
                 return <MdMail size={24} color={formColors.color.inactive} />;
-                break;
             default:
                 return <MdLock size={24} color={formColors.color.inactive} />;
-                break;
         }
     }
 };
