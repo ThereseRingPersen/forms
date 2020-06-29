@@ -1,5 +1,14 @@
 import React from 'react';
-import { InputAndLabelContainer, FormGroup, Input, InputGroup, Label, ErrorText, HelperText } from './styles';
+import {
+    InputAndLabelContainer,
+    FormGroup,
+    Input,
+    InputGroup,
+    Label,
+    ErrorText,
+    HelperText,
+    IconContainer,
+} from './styles';
 import { TextFieldProps, LeadingIcon } from './types';
 import { MdLock, MdMail, MdError } from 'react-icons/md';
 import { formColors } from './formColors';
@@ -22,7 +31,7 @@ const TextField = ({
     return (
         <FormGroup>
             <InputGroup isActive={isActive} hasError={errorMessage !== null}>
-                {leadingIcon && getIcon(leadingIcon)}
+                <IconContainer>{leadingIcon && getIcon(leadingIcon)}</IconContainer>
                 <InputAndLabelContainer isActive={isActive} hasError={errorMessage !== null}>
                     <Input
                         id={id}
@@ -39,7 +48,9 @@ const TextField = ({
                         {label}
                     </Label>
                 </InputAndLabelContainer>
-                {errorMessage && <MdError size={'2rem'} color={formColors.color.error} />}
+                <IconContainer>
+                    {errorMessage && <MdError size={'24px'} color={formColors.color.error} />}
+                </IconContainer>
             </InputGroup>
 
             {helperText && errorMessage === null && <HelperText>{helperText} </HelperText>}
@@ -49,10 +60,10 @@ const TextField = ({
     function getIcon(icon: LeadingIcon) {
         switch (icon) {
             case 'email':
-                return <MdMail size={'2rem'} color={formColors.color.inactive} />;
+                return <MdMail size={24} color={formColors.color.inactive} />;
                 break;
             default:
-                return <MdLock size={'2rem'} color={formColors.color.inactive} />;
+                return <MdLock size={24} color={formColors.color.inactive} />;
                 break;
         }
     }

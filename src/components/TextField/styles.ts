@@ -4,7 +4,7 @@ import { InputProps, LabelProps, InputGroupProps } from './types';
 
 export const Input = styled.input<InputProps>`
     position: absolute;
-    width: 100%;
+    width: 14rem;
     height: auto;
     padding: 1.5rem 0 0 0.5rem;
     line-height: 1.25rem;
@@ -13,14 +13,15 @@ export const Input = styled.input<InputProps>`
     background-color: inherit;
     outline: none;
     :focus {
-        color: ${(props) => (props.hasError ? formColors.color.error : formColors.color.focus)};
+        color: ${(props) => (props.hasError ? formColors.color.error : formColors.color.hover)};
     }
     color: ${(props) => (props.hasError ? formColors.color.error : formColors.color.active)};
 `;
 export const InputGroup = styled.div<InputGroupProps>`
-    display: inline-flex;
+    display: flex;
     height: 3.6rem;
-    width: 100%;
+    line-height: 1.5rem;
+    width: 18rem;
     border-radius: 0.313rem 0.313rem 0 0;
     box-shadow: ${(props) => (props.hasError ? `inset 0 -0.125rem 0 0 ${formColors.color.error}` : `0`)};
     background-color: ${(props) =>
@@ -35,21 +36,19 @@ export const InputGroup = styled.div<InputGroupProps>`
     :focus {
         box-shadow: inset 0 -0.125rem 0 0 ${(props) => (props.hasError ? formColors.color.error : formColors.color.focus)};
     }
-    svg {
-        margin: 0.5rem 0.2rem 0 0.2rem;
-        align-self: center;
-    }
 `;
 export const InputAndLabelContainer = styled.div<InputProps>`
     position: relative;
-    width: 100%;
+    width: 12rem;
+    float: left;
+    flex-grow: 1;
 `;
 export const Label = styled.label<LabelProps>`
     position: absolute;
     height: 1.3rem;
     line-height: 1.25rem;
     padding-left: 0.5rem;
-    width: 14rem;
+    width: 10rem;
     background-color: transparent;
     top: ${(props) => (props.isActive ? '5px' : '24px')};
     font-size: ${(props) => (props.isActive ? '0.8rem' : '1rem')};
@@ -69,6 +68,12 @@ export const FormGroup = styled.div`
     margin-bottom: 0.7rem;
     width: 18rem;
     height: 4.5rem;
+`;
+
+export const IconContainer = styled.span`
+    width: 1.5rem;
+    margin: 0.5rem 0.2rem 0 0.2rem;
+    align-self: center;
 `;
 
 function labelColor(hasError: boolean, isActive: boolean, isFocused: boolean) {
