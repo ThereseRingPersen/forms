@@ -1,5 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
-const GlobalStyle = createGlobalStyle`
+import { media } from './media';
+
+export const GlobalStyle = createGlobalStyle`
 body {
     *{
         box-sizing: border-box;
@@ -9,6 +11,9 @@ body {
     padding: 50px;
     font-family:Arial, Helvetica, sans-serif;
     font-size:100%;
+    ${media.sm`
+      padding: 15px;
+   `}
 }
 
 h1 {
@@ -39,4 +44,3 @@ p {
     font-size: 1em;
     }
 `;
-export default GlobalStyle;

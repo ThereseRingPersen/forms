@@ -1,6 +1,6 @@
 import React from 'react';
-import { CenteredLayout } from '../../../styles/layout';
-import TextField from '../../TextField';
+import { CenteredBox } from '../../../styles/layout';
+import { TextField } from '../../TextField';
 import Button from '../../Button/Button';
 import { useInput } from '../inputHook';
 import { useForm } from '../formHook';
@@ -20,7 +20,7 @@ const LoginForm = () => {
     const form = useForm({ emailHook, passwordHook });
 
     return (
-        <CenteredLayout>
+        <CenteredBox>
             <h2>Login</h2>
             <TextField
                 type={'email'}
@@ -52,7 +52,7 @@ const LoginForm = () => {
             <Button type="submit" disabled={!form.isValid} onClick={form.submit}>
                 Login
             </Button>
-        </CenteredLayout>
+        </CenteredBox>
     );
 };
 

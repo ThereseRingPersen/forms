@@ -13,7 +13,7 @@ import { TextFieldProps, LeadingIcon } from './types';
 import { MdLock, MdMail, MdError } from 'react-icons/md';
 import { formColors } from './formColors';
 
-const TextField = ({
+export const TextField = ({
     id,
     label,
     helperText,
@@ -66,5 +66,3 @@ const TextField = ({
         }
     }
 };
-
-export default TextField;

@@ -1,5 +1,3 @@
-import { InputHook, InputTypes } from '../Form/types';
-
 export type Type = 'text' | 'email' | 'password';
 export type LeadingIcon = 'password' | 'email';
 
@@ -34,6 +32,4 @@ export interface InputProps {
 export interface InputGroupProps {
     isActive: boolean;
     hasError: boolean;
-    leadingIcon?: (icon: any) => any;
-    trailingIcon?: (icon: any) => any;
 }
