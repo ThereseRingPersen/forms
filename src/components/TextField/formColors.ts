@@ -1,16 +1,27 @@
+import { colors } from '../../styles';
 const formColors = {
-    backgroundColor: {
-        dark: '#E0E0E0',
-        light: '#E8E8E8',
-        default: '#F0F0F0',
+    iconColor:{
+        grey: colors.text.medium
     },
-    color: {
-        inactive: '#808080',
-        active: '#101010',
-        hover: '#101010',
-        focus: '#5A0740',
-        error: '#CC0000',
-        helperText: '#888888',
+    fieldBackround: {
+        active: colors.grey.dark,
+        hover: colors.grey.medium,
+        initial: colors.grey.light,
+    },
+    fieldText: colors.text.dark,
+    helperText: colors.text.light,
+    label: {
+        notActivated: colors.text.medium,
+        focus: colors.primary.medium,
+        error: colors.red,
+        disabled: colors.text.light,
+    },
+    border: {
+        error: colors.red,
+        focus: colors.primary.medium,
+        active: colors.text.dark,
+        hover: colors.text.medium,
+        notActivated: colors.text.light,
     },
 };
 

@@ -6,16 +6,13 @@ import { media } from '../../styles';
 export const Input = styled.input<InputProps>`
     position: absolute;
     width: 100%;
-    padding: 24px 0 0 8px;
+    padding: 20px 0 0 8px;
     line-height: 1.25rem;
     font-size: 1rem;
     border: none;
     background-color: inherit;
     outline: none;
-    :focus {
-        color: ${(props) => (props.hasError ? formColors.color.error : formColors.color.hover)};
-    }
-    color: ${(props) => (props.hasError ? formColors.color.error : formColors.color.active)};
+    color: ${formColors.fieldText};
 `;
 export const InputGroup = styled.div<InputGroupProps>`
     display: flex;
@@ -25,18 +22,18 @@ export const InputGroup = styled.div<InputGroupProps>`
       width: 100%;
    `}
     border-radius: 5px 5px 0 0;
-    box-shadow: ${(props) => (props.hasError ? `inset 0 -2.5px 0 0 ${formColors.color.error}` : `0`)};
+    box-shadow: ${(props) => (props.hasError ? `inset 0 -2.5px 0 0 ${formColors.border.error}` : `0`)};
     background-color: ${(props) =>
-        props.isActive ? formColors.backgroundColor.dark : formColors.backgroundColor.light};
+        props.isActive ? formColors.fieldBackround.active : formColors.fieldBackround.hover};
     :hover {
         box-shadow: ${(props) =>
             props.hasError
-                ? `inset 0 -2.5px 0 0 ${formColors.color.error}`
-                : `inset 0 -1.25 0 0 ${formColors.color.hover}`};
+                ? `inset 0 -2.5px 0 0 ${formColors.border.error}`
+                : `inset 0 -1.5px 0 0 ${formColors.border.hover}`};
     }
     :focus-within,
     :focus {
-        box-shadow: inset 0 -1.25px 0 0 ${(props) => (props.hasError ? formColors.color.error : formColors.color.focus)};
+        box-shadow: inset 0 -1.25px 0 0 ${(props) => (props.hasError ? formColors.border.error : formColors.border.focus)};
     }
 `;
 export const InputAndLabelContainer = styled.div<InputProps>`
@@ -47,20 +44,20 @@ export const InputAndLabelContainer = styled.div<InputProps>`
 export const Label = styled.label<LabelProps>`
     position: absolute;
     height: 1.3rem;
-    padding-left: 0.5rem;
+    padding-left: 8px;
     width: 12rem;
     background-color: transparent;
     top: ${(props) => (props.isActive ? '5px' : '24px')};
     font-size: ${(props) => (props.isActive ? '0.8rem' : '1rem')};
-    color: ${(props) => labelColor(props.hasError, props.isActive, props.isFocused)};
+    color: ${(props) => labelColor(props.hasError, props.isFocused)};
 `;
 export const HelperText = styled.div`
-    color: ${formColors.color.helperText};
+    color: ${formColors.helperText};
     font-size: 0.7rem;
     margin-top: 2.5px;
 `;
 export const ErrorText = styled.div`
-    color: ${formColors.color.error};
+    color: ${formColors.label.error};
     font-size: 0.7rem;
     margin-top: 2.5px;
 `;
@@ -79,14 +76,11 @@ export const IconContainer = styled.span`
     align-self: center;
 `;
 
-function labelColor(hasError: boolean, isActive: boolean, isFocused: boolean) {
+function labelColor(hasError: boolean, isFocused: boolean) {
     if (hasError) {
-        return formColors.color.error;
+        return formColors.label.error;
     } else if (isFocused) {
-        return formColors.color.focus;
-    } else if (isActive) {
-        return formColors.color.active;
-    } else {
-        return formColors.color.inactive;
+        return formColors.label.focus;
     }
+    return formColors.label.notActivated;
 }

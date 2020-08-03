@@ -10,9 +10,9 @@ export const colors = {
         dark: '#bdbdbd',
         textDark: '#616161',
     },
-    white: '#ffffff',
     red: '#CC0000',
     text: {
+        white: '#ffffff',
         light: '#9e9e9e',
         medium: '#616161',
         dark: '#212121',

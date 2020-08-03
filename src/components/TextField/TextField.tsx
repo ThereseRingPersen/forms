@@ -49,7 +49,7 @@ export const TextField = ({
                     </Label>
                 </InputAndLabelContainer>
                 <IconContainer>
-                    {errorMessage && <MdError size={'24px'} color={formColors.color.error} />}
+                    {errorMessage && <MdError size={'24px'} color={formColors.label.error} />}
                 </IconContainer>
             </InputGroup>
 
@@ -60,9 +60,9 @@ export const TextField = ({
     function getIcon(icon: LeadingIcon) {
         switch (icon) {
             case 'email':
-                return <MdMail size={24} color={formColors.color.inactive} />;
+                return <MdMail size={24} color={formColors.iconColor.grey} />;
             default:
-                return <MdLock size={24} color={formColors.color.inactive} />;
+                return <MdLock size={24} color={formColors.iconColor.grey} />;
         }
     }
 };

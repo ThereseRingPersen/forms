@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { media } from './media';
+import { colors } from './colors';
 
 export const CenteredBox = styled.div`
     width: 25rem;
@@ -12,7 +13,7 @@ export const CenteredBox = styled.div`
     align-items: center;
     justify-content: center;
     margin: 0 auto;
-    border: 0.1rem solid #4b0082;
+    border: 0.1rem solid ${colors.primary.dark};
     border-radius: 0.313rem;
     ${media.sm`
       width: 100%;

@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import { media } from './media';
+import { colors } from './colors';
 
 export const GlobalStyle = createGlobalStyle`
 body {
@@ -11,6 +12,7 @@ body {
     padding: 50px;
     font-family:Arial, Helvetica, sans-serif;
     font-size:100%;
+    color: ${colors.text.dark};
     ${media.sm`
       padding: 15px;
    `}
@@ -20,14 +22,11 @@ h1 {
     margin: 0.67em 0;
     font-size: 2.5em;
     font-weight: 100;
-    color: #4b0082;
-   
     }
 h2 {
     margin: 0.83em 0;
     font-size: 2em;
     font-weight: 100;
-    color:#4b0082;
     }
 h3{
     margin: 0.83em 0;
