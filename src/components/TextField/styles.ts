@@ -16,29 +16,32 @@ export const Input = styled.input<InputProps>`
 `;
 
 export const InputGroup = styled.div<InputGroupProps>`
-           display: flex;
-           height: 3.6rem;
-           width: 18rem;
-           ${media.sm`
+    display: flex;
+    height: 3.6rem;
+    width: 18rem;
+    ${media.sm`
       width: 100%;
    `}
-           border-radius: 5px 5px 0 0;
-           background-color: ${formColors.fieldBackround.initial};
-           box-shadow: ${(props) => (props.hasError ? `inset 0 -2.5px 0 0 ${formColors.border.error}` : `0`)};
-           :hover {
-               background-color: ${formColors.fieldBackround.hover};
-               box-shadow: ${(props) =>
-                   props.hasError
-                       ? `inset 0 -2.5px 0 0 ${formColors.border.error}`
-                       : `inset 0 -1.5px 0 0 ${formColors.border.hover}`};
-           }
+    border-radius: 5px 5px 0 0;
+    background-color: ${formColors.fieldBackround.initial};
+    box-shadow: ${(props) =>
+        props.hasError
+            ? `inset 0 -2.5px 0 0 ${formColors.border.error}`
+            : `inset 0 -1.5px 0 0 ${formColors.border.notActivated}`};
+    :hover {
+        background-color: ${formColors.fieldBackround.hover};
+        box-shadow: ${(props) =>
+            props.hasError
+                ? `inset 0 -2.5px 0 0 ${formColors.border.error}`
+                : `inset 0 -2.5px 0 0 ${formColors.border.hover}`};
+    }
 
-           :focus-within,
-           :focus {
-               background-color: ${formColors.fieldBackround.active};
-               box-shadow: inset 0 -2.5px 0 0 ${(props) => (props.hasError ? formColors.border.error : formColors.border.focus)};
-           }
-       `;
+    :focus-within,
+    :focus {
+        background-color: ${formColors.fieldBackround.active};
+        box-shadow: inset 0 -2.5px 0 0 ${(props) => (props.hasError ? formColors.border.error : formColors.border.focus)};
+    }
+`;
 
 export const InputAndLabelContainer = styled.div<InputProps>`
     position: relative;
@@ -92,4 +95,3 @@ function labelColor(hasError: boolean, isFocused: boolean) {
     }
     return formColors.label.notActivated;
 }
-
