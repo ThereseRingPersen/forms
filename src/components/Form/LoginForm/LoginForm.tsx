@@ -49,7 +49,7 @@ const LoginForm = () => {
                 helperText={'Must be at least 8 characters'}
                 leadingIcon={'password'}
             />
-            <Button type="submit" disabled={!form.isValid} onClick={form.submit}>
+            <Button loading={true} type="submit" disabled={!form.isValid} onClick={form.submit}>
                 Login
             </Button>
         </CenteredBox>

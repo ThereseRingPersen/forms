@@ -17,8 +17,8 @@ export const Input = styled.input<InputProps>`
 
 export const InputGroup = styled.div<InputGroupProps>`
     display: flex;
-    height: 3.6rem;
-    width: 18rem;
+    height: 3.6em;
+    width: 18em;
     ${media.sm`
       width: 100%;
    `}
